@@ -95,3 +95,6 @@
  ;; If there is more than one, they won't work right.
  '(smtpmail-smtp-server "mail.cluster-team.com")
  '(smtpmail-smtp-service 25))
+
+;; journal
+(setq org-journal-encrypt-journal t)
