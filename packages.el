@@ -53,3 +53,5 @@
 (package! kubernetes)
 (package! kubernetes-evil)
 (package! k8s-mode)
+(package! gitlab-ci-mode)
+(package! gitlab-ci-mode-flycheck)

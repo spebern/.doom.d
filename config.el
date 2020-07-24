@@ -117,3 +117,12 @@
 
 (evil-set-initial-state 'kubel-mode 'emacs)
 
+;; gitlab
+(use-package! gitlab-ci-mode
+  :ensure t)
+
+(use-package! gitlab-ci-mode-flycheck
+  :ensure t
+  :after flycheck gitlab-ci-mode
+  :init
+  (gitlab-ci-mode-flycheck-enable))
