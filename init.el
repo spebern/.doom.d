@@ -14,6 +14,11 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+(add-hook! 'after-make-frame-functions
+  (defun my-load-theme-fix (frame)
+      (select-frame frame)
+      (doom/reload-theme)))
+
 (doom! :input
        ;;chinese
        ;;japanese
