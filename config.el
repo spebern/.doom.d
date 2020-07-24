@@ -98,3 +98,22 @@
 
 ;; journal
 (setq org-journal-encrypt-journal t)
+
+;; kubernetes
+(use-package! kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+
+(use-package! kubernetes-evil
+  :ensure t
+  :after kubernetes)
+
+(use-package! k8s-mode
+  :ensure t
+  :hook (k8s-mode . yas-minor-mode))
+
+(use-package! kubel
+  :ensure t)
+
+(evil-set-initial-state 'kubel-mode 'emacs)
+
