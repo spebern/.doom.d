@@ -126,3 +126,7 @@
   :after flycheck gitlab-ci-mode
   :init
   (gitlab-ci-mode-flycheck-enable))
+
+;; latex
+(setq +latex-viewers '(zathura))
+(setq latex-preview-pane-use-frame t)
