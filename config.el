@@ -131,6 +131,15 @@
 (setq +latex-viewers '(zathura))
 (setq latex-preview-pane-use-frame t)
 
+;; vue
+(add-hook 'vue-mode-local-vars-hook #'lsp!)
+
+(use-package! vue-mode
+  :ensure t)
+
+(use-package! vue-html-mode
+  :mode ("/\\.vue$"))
+
 ;; perl
 (use-package! cperl-mode
   :mode ("/\\.pm$" "/\\.pl$" "/\\.t$"))
