@@ -101,28 +101,22 @@
 
 ;; kubernetes
 (use-package! kubernetes
-  :ensure t
   :commands (kubernetes-overview))
 
 (use-package! kubernetes-evil
-  :ensure t
   :after kubernetes)
 
 (use-package! k8s-mode
-  :ensure t
   :hook (k8s-mode . yas-minor-mode))
 
-(use-package! kubel
-  :ensure t)
+(use-package! kubel)
 
 (evil-set-initial-state 'kubel-mode 'emacs)
 
 ;; gitlab
-(use-package! gitlab-ci-mode
-  :ensure t)
+(use-package! gitlab-ci-mode)
 
 (use-package! gitlab-ci-mode-flycheck
-  :ensure t
   :after flycheck gitlab-ci-mode
   :init
   (gitlab-ci-mode-flycheck-enable))
