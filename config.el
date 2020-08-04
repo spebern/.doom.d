@@ -130,3 +130,7 @@
 ;; latex
 (setq +latex-viewers '(zathura))
 (setq latex-preview-pane-use-frame t)
+
+;; perl
+(use-package! cperl-mode
+  :mode ("/\\.pm$" "/\\.pl$" "/\\.t$"))
