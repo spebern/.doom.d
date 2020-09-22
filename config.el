@@ -136,3 +136,6 @@
 ;; perl
 (use-package! cperl-mode
   :mode ("/\\.pm$" "/\\.pl$" "/\\.t$"))
+
+(eval-after-load "org"
+  '(require 'ox-confluence nil t))
