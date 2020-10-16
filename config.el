@@ -142,3 +142,6 @@
 ;; protobuf
 (use-package! protobuf-mode)
 
+;; org download (images etc)
+(use-package! org-download)
+(setq-default org-download-image-dir "~/Dropbox/org/images")

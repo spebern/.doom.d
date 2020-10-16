@@ -58,3 +58,4 @@
 (package! vue-mode)
 (package! vue-html-mode)
 (package! protobuf-mode)
+(package! org-download)
