@@ -20,7 +20,7 @@
       (doom/reload-theme)))
 
 (doom! :input
-       ;;chinese
+       chinese
        ;;japanese
 
        :completion
