@@ -139,3 +139,6 @@
 
 (eval-after-load "org"
   '(require 'ox-confluence nil t))
+;; protobuf
+(use-package! protobuf-mode)
+
