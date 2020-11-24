@@ -76,15 +76,50 @@
 (add-hook! 'perl-mode-hook (format-all-code - 1))
 
 ;; email
-(set-email-account! "specht.net"
-  '((mu4e-sent-folder       . "/specht.net/Sent Mail")
-    (mu4e-drafts-folder     . "/specht.net/Drafts")
-    (mu4e-trash-folder      . "/specht.net/Trash")
-    (mu4e-refile-folder     . "/specht.net/All Mail")
-    (smtpmail-smtp-user     . "bernhard@specht.net")
-    (user-mail-address      . "bernhard@specht.net")    ;; only needed for mu < 1.4
-    (mu4e-compose-signature . "---\nBernhard Specht"))
-  t)
+(defvar my-mu4e-account-alist
+  '(("bernhard@specht.net"
+     (mu4e-sent-folder "/bernhard@specht.net/Sent")
+     (mu4e-drafts-folder "/bernhard@specht.net/Drafts")
+     (mu4e-trash-folder "/bernhard@specht.net/Trash")
+     (user-mail-address "bernhard@specht.net")
+     (smtpmail-default-smtp-server "mail.cluster-team.com")
+     (smtpmail-local-domain "mail.cluster-team.com")
+     (smtpmail-smtp-user "bernhard@specht.net")
+     (smtpmail-smtp-server "mail.cluster-team.com")
+     (smtpmail-stream-type starttls)
+     (smtpmail-smtp-service 25))
+    ("b.specht@ecentral.de"
+     (mu4e-sent-folder "/b.specht@ecentral.de/Sent")
+     (mu4e-drafts-folder "/b.specht@ecentral.de/Drafts")
+     (mu4e-trash-folder "/b.specht@ecentral.de/Trash")
+     (user-mail-address "b.specht@ecentral.de")
+     (smtpmail-default-smtp-server "smtprelaypool.ispgateway.de")
+     (smtpmail-local-domain "smtprelaypool.ispgateway.de")
+     (smtpmail-smtp-user "b.specht@ecentral.de")
+     (smtpmail-smtp-server "smtprelaypool.ispgateway.de")
+     (smtpmail-stream-type ssl)
+     (smtpmail-smtp-service 465))))
+
+(defun my-mu4e-set-account ()
+  "Set the account for composing a message."
+  (let* ((account
+          (if mu4e-compose-parent-message
+              (let ((maildir (mu4e-message-field mu4e-compose-parent-message :maildir)))
+                (string-match "/\\(.*?\\)/" maildir)
+                (match-string 1 maildir))
+            (completing-read (format "Compose with account: (%s) "
+                                     (mapconcat #'(lambda (var) (car var))
+                                                my-mu4e-account-alist "/"))
+                             (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
+                             nil t nil nil (caar my-mu4e-account-alist))))
+         (account-vars (cdr (assoc account my-mu4e-account-alist))))
+    (if account-vars
+        (mapc #'(lambda (var)
+                  (set (car var) (cadr var)))
+              account-vars)
+      (error "No email account found"))))
+
+(add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
 
 (load! "+bindings")
 (custom-set-variables
