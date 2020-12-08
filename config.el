@@ -180,3 +180,13 @@
 ;; org download (images etc)
 (use-package! org-download)
 (setq-default org-download-image-dir "~/Dropbox/org/images")
+
+(setq-hook! 'vue-mode-hook +format-with-lsp nil)
+
+;; jira export
+(use-package! ox-jira)
+
+;; org babel http
+(use-package! ob-http)
+
+(setq company-idle-delay 0.0)
