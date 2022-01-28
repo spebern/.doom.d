@@ -31,7 +31,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Dropbox/org/")
+(setq org-directory "~/Nextcloud/org/")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -55,9 +55,9 @@
   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
   (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
   (setq lsp-rust-analyzer-proc-macro-enable t)
-  (setq lsp-rust-analyzer-display-chaining-hints t)
-  (setq lsp-rust-analyzer-display-parameter-hints t)
-  (setq lsp-rust-analyzer-server-display-inlay-hints t)
+;  (setq lsp-rust-analyzer-display-chaining-hints t)
+;  (setq lsp-rust-analyzer-display-parameter-hints t)
+;  (setq lsp-rust-analyzer-server-display-inlay-hints t)
   (setq lsp-rust-all-features t)
   (setq lsp-rust-full-docs t)
   (setq lsp-enable-semantic-highlighting t))
@@ -179,7 +179,8 @@
 
 ;; org download (images etc)
 (use-package! org-download)
-(setq-default org-download-image-dir "~/Dropbox/org/images")
+(setq-default org-download-image-dir "~/Nextcloud/org/images")
+(setq-default org-roam-directory "~/Nextcloud/org")
 
 (setq-hook! 'vue-mode-hook +format-with-lsp nil)
 
@@ -202,6 +203,17 @@
   (defun wl-paste ()
         (if (and wl-copy-process (process-live-p wl-copy-process))
 	          nil ; should return nil if we're the current paste owner
-		          (shell-command-to-string "wl-paste -n | tr -d \r")))
+		          (shell-command-to-string "wl-paste -n")))
   (setq interprogram-cut-function 'wl-copy)
   (setq interprogram-paste-function 'wl-paste)
+
+(setq org-pomodoro-audio-player "mplayer")
+(setq org-pomodoro-finished-sound-args "-volume 0.3")
+(setq org-pomodoro-long-break-sound-args "-volume 0.3")
+(setq org-pomodoro-short-break-sound-args "-volume 0.3")
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred

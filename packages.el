@@ -61,3 +61,4 @@
 (package! org-download)
 (package! ox-jira)
 (package! ob-http)
+(package! lsp-pyright)

@@ -28,7 +28,8 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;(ivy +childframe +icons)               ; a search engine for love and life
-       ivy               ; a search engine for love and life
+       ;;ivy               ; a search engine for love and life
+       vertico
 
        :ui
        deft              ; notational velocity for Emacs
@@ -53,7 +54,7 @@
        ;;vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;;window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
-       ;;zen               ; distraction-free coding or writing
+       zen               ; distraction-free coding or writing
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -90,7 +91,7 @@
        :tools
        ;;ansible
        (debugger +lsp)          ; FIXME stepping through code, to help you add bugs
-       biblio
+       ;;biblio
        ;;direnv
        (docker +lsp)
        editorconfig      ; let someone else argue about tabs vs spaces
@@ -130,7 +131,7 @@
        ;;fsharp           ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (go +lsp)         ; the hipster dialect
+       (go +lsp +goimports +gotests)         ; the hipster dialect
        ;;(haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
@@ -148,7 +149,7 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       (org +journal +jupyter +noter +roam +pomodoro +pandoc +dragndrop +pretty)               ; organize your plain life in plain text
+       (org +journal +jupyter +noter +roam2 +pomodoro +pandoc +dragndrop +pretty)               ; organize your plain life in plain text
        (php +lsp)               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
