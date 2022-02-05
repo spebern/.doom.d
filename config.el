@@ -132,6 +132,7 @@
 
 ;; journal
 (setq org-journal-encrypt-journal t)
+(setq org-journal-dir "~/Nextcloud/org")
 
 ;; kubernetes
 (use-package! kubernetes
@@ -217,3 +218,6 @@
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
+
+(after! rustic
+  (set-popup-rule! "^\\*cargo" :size 0.5))
