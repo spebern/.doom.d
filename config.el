@@ -222,3 +222,6 @@
 (after! rustic
   (set-popup-rule! "^\\*cargo" :size 0.5))
 (setq rustic-cargo-test-disable-warnings t)
+
+(setq! citar-bibliography '("~/Nextcloud/references.bib"))
+

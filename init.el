@@ -91,7 +91,7 @@
        :tools
        ;;ansible
        (debugger +lsp)          ; FIXME stepping through code, to help you add bugs
-       ;;biblio
+       biblio
        ;;direnv
        (docker +lsp)
        editorconfig      ; let someone else argue about tabs vs spaces
@@ -101,7 +101,7 @@
        (lookup +dictionary +offline +docsets)              ; navigate your code and its documentation
        (lsp +peek)
        ;;macos             ; MacOS-specific commands
-       (magit +forge)             ; a git porcelain for Emacs
+       magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        pdf               ; pdf enhancements
@@ -119,7 +119,7 @@
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
-       (csharp +lsp)            ; unity, .NET, and mono shenanigans
+       ;;(csharp +lsp)            ; unity, .NET, and mono shenanigans
        ;;data              ; config/data formats
        (dart +flutter +lsp)   ; paint ui and not much else
        ;;elixir            ; erlang done right
