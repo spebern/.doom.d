@@ -225,3 +225,5 @@
 
 (setq! citar-bibliography '("~/Nextcloud/references.bib"))
 
+
+(setq org-image-actual-width (list 550))
