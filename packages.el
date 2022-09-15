@@ -62,3 +62,6 @@
 (package! ox-jira)
 (package! ob-http)
 (package! lsp-pyright)
+(package! leetcode)
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))

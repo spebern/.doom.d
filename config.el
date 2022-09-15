@@ -179,7 +179,6 @@
 (use-package! protobuf-mode)
 
 ;; org download (images etc)
-(use-package! org-download)
 (setq-default org-download-image-dir "~/Nextcloud/org/images")
 (setq-default org-roam-directory "~/Nextcloud/org")
 
@@ -190,8 +189,6 @@
 
 ;; org babel http
 (use-package! ob-http)
-
-(setq company-idle-delay 0.0)
 
  (setq wl-copy-process nil)
   (defun wl-copy (text)
@@ -227,3 +224,22 @@
 
 
 (setq org-image-actual-width (list 550))
+(setq leetcode-prefer-language "python3")
+(setq leetcode-prefer-sql "mysql")
+(setq leetcode-save-solutions t)
+(setq leetcode-directory "~/leetcode")
+(add-hook 'leetcode-solution-mode-hook
+          (lambda() (flycheck-mode -1)))
+(after! go-mode
+  (setq gofmt-command "goimports")
+  (add-hook 'go-mode-hook
+            (lambda ()
+              (add-hook 'after-save-hook 'gofmt nil 'make-it-local))))
+
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+         ("C-<tab>" . 'copilot-accept-completion-by-word)
+         :map copilot-completion-map
+         ("<tab>" . 'copilot-accept-completion)
+         ("TAB" . 'copilot-accept-completion)))
