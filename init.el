@@ -25,7 +25,7 @@
        ;;(ivy +childframe +icons)               ; a search engine for love and life
        ;;ivy               ; a search engine for love and life
        (vertico +orderless +icons)
-       ;;(corfu +orderless)
+       ;; (corfu +orderless)
 
        :ui
        deft              ; notational velocity for Emacs
@@ -95,7 +95,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        gist              ; interacting with github gists
        (lookup +dictionary +offline +docsets)              ; navigate your code and its documentation
-       (lsp +eglot)
+       (lsp)
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
