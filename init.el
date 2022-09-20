@@ -14,22 +14,18 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
-(add-hook! 'after-make-frame-functions
-  (defun my-load-theme-fix (frame)
-      (select-frame frame)
-      (doom/reload-theme)))
-
 (doom! :input
        chinese
        ;;japanese
 
        :completion
-       (company)           ; the ultimate code completion backend
+       (company +childframe)           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;(ivy +childframe +icons)               ; a search engine for love and life
        ;;ivy               ; a search engine for love and life
-       vertico
+       (vertico +orderless +icons)
+       ;;(corfu +orderless)
 
        :ui
        deft              ; notational velocity for Emacs
@@ -73,7 +69,7 @@
        :emacs
        dired             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
-       ibuffer         ; interactive buffer management
+       ;;ibuffer         ; interactive buffer management
        ;;undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
@@ -99,7 +95,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        gist              ; interacting with github gists
        (lookup +dictionary +offline +docsets)              ; navigate your code and its documentation
-       (lsp +peek)
+       (lsp +eglot)
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
@@ -111,6 +107,7 @@
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
+       tree-sitter       ; syntax and parsing, sitting in a tree...
 
        :lang
        ;;agda              ; types of types of types of types...
