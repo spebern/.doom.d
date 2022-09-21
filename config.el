@@ -146,8 +146,6 @@
 
 (use-package! kubel)
 
-(evil-set-initial-state 'kubel-mode 'emacs)
-
 ;; gitlab
 (use-package! gitlab-ci-mode)
 
