@@ -55,110 +55,18 @@
   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
   (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
   (setq lsp-rust-analyzer-proc-macro-enable t)
-;  (setq lsp-rust-analyzer-display-chaining-hints t)
-;  (setq lsp-rust-analyzer-display-parameter-hints t)
-;  (setq lsp-rust-analyzer-server-display-inlay-hints t)
+                                        ;  (setq lsp-rust-analyzer-display-chaining-hints t)
+                                        ;  (setq lsp-rust-analyzer-display-parameter-hints t)
+                                        ;  (setq lsp-rust-analyzer-server-display-inlay-hints t)
   (setq lsp-rust-all-features t)
-  (setq lsp-rust-full-docs t)
-  (setq lsp-enable-semantic-highlighting t))
+  (setq lsp-rust-full-docs t))
 
-;; python
-(after! lsp-python-ms
-  (set-lsp-priority! 'mspyls 1))
-
-;; ivy
-(setq ivy-read-action-function #'ivy-hydra-read-action)
-
-;; evil
-(setq evil-escape-unordered-key-sequence t)
-
-;; perl
-(add-hook! 'perl-mode-hook (format-all-code - 1))
-
-;; email
-(defvar my-mu4e-account-alist
-  '(("bernhard@specht.net"
-     (mu4e-sent-folder "/bernhard@specht.net/Sent")
-     (mu4e-drafts-folder "/bernhard@specht.net/Drafts")
-     (mu4e-trash-folder "/bernhard@specht.net/Trash")
-     (user-mail-address "bernhard@specht.net")
-     (smtpmail-default-smtp-server "mail.cluster-team.com")
-     (smtpmail-local-domain "mail.cluster-team.com")
-     (smtpmail-smtp-user "bernhard@specht.net")
-     (smtpmail-smtp-server "mail.cluster-team.com")
-     (smtpmail-stream-type starttls)
-     (smtpmail-smtp-service 25))
-    ("b.specht@ecentral.de"
-     (mu4e-sent-folder "/b.specht@ecentral.de/Sent")
-     (mu4e-drafts-folder "/b.specht@ecentral.de/Drafts")
-     (mu4e-trash-folder "/b.specht@ecentral.de/Trash")
-     (user-mail-address "b.specht@ecentral.de")
-     (smtpmail-default-smtp-server "smtprelaypool.ispgateway.de")
-     (smtpmail-local-domain "smtprelaypool.ispgateway.de")
-     (smtpmail-smtp-user "b.specht@ecentral.de")
-     (smtpmail-smtp-server "smtprelaypool.ispgateway.de")
-     (smtpmail-stream-type ssl)
-     (smtpmail-smtp-service 465))))
-
-(defun my-mu4e-set-account ()
-  "Set the account for composing a message."
-  (let* ((account
-          (if mu4e-compose-parent-message
-              (let ((maildir (mu4e-message-field mu4e-compose-parent-message :maildir)))
-                (string-match "/\\(.*?\\)/" maildir)
-                (match-string 1 maildir))
-            (completing-read (format "Compose with account: (%s) "
-                                     (mapconcat #'(lambda (var) (car var))
-                                                my-mu4e-account-alist "/"))
-                             (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
-                             nil t nil nil (caar my-mu4e-account-alist))))
-         (account-vars (cdr (assoc account my-mu4e-account-alist))))
-    (if account-vars
-        (mapc #'(lambda (var)
-                  (set (car var) (cadr var)))
-              account-vars)
-      (error "No email account found"))))
-
-(add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
-
-(load! "+bindings")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(smtpmail-smtp-server "mail.cluster-team.com")
- '(smtpmail-smtp-service 25))
-
-;; journal
 (setq org-journal-encrypt-journal t)
 (setq org-journal-dir "~/Nextcloud/org")
 
-;; kubernetes
-(use-package! kubernetes
-  :commands (kubernetes-overview))
-
-(use-package! kubernetes-evil
-  :after kubernetes)
-
-(use-package! k8s-mode
-  :hook (k8s-mode . yas-minor-mode))
-
-(use-package! kubel)
-
-;; gitlab
-(use-package! gitlab-ci-mode)
-
-(use-package! gitlab-ci-mode-flycheck
-  :after flycheck gitlab-ci-mode
-  :init
-  (gitlab-ci-mode-flycheck-enable))
-
-;; latex
 (setq +latex-viewers '(zathura))
 (setq latex-preview-pane-use-frame t)
 
-;; vue
 (add-hook 'vue-mode-local-vars-hook #'lsp!)
 
 (use-package! vue-mode
@@ -167,52 +75,43 @@
 (use-package! vue-html-mode
   :mode ("/\\.vue$"))
 
-;; perl
 (use-package! cperl-mode
   :mode ("/\\.pm$" "/\\.pl$" "/\\.t$"))
 
 (eval-after-load "org"
   '(require 'ox-confluence nil t))
-;; protobuf
+
 (use-package! protobuf-mode)
 
-;; org download (images etc)
 (setq-default org-download-image-dir "~/Nextcloud/org/images")
 (setq-default org-roam-directory "~/Nextcloud/org")
 
 (setq-hook! 'vue-mode-hook +format-with-lsp nil)
 
-;; jira export
-(use-package! ox-jira)
-
 ;; org babel http
 (use-package! ob-http)
 
- (setq wl-copy-process nil)
-  (defun wl-copy (text)
-        (setq wl-copy-process (make-process :name "wl-copy"
-					                                            :buffer nil
-										                                            :command '("wl-copy" "-f" "-n")
-															                                            :connection-type 'pipe))
-	    (process-send-string wl-copy-process text)
-	        (process-send-eof wl-copy-process))
-  (defun wl-paste ()
-        (if (and wl-copy-process (process-live-p wl-copy-process))
-	          nil ; should return nil if we're the current paste owner
-		          (shell-command-to-string "wl-paste -n")))
-  (setq interprogram-cut-function 'wl-copy)
-  (setq interprogram-paste-function 'wl-paste)
+(setq wl-copy-process nil)
+(defun wl-copy (text)
+  (setq wl-copy-process (make-process :name "wl-copy"
+                                      :buffer nil
+                                      :command '("wl-copy" "-f" "-n")
+                                      :connection-type 'pipe))
+  (process-send-string wl-copy-process text)
+  (process-send-eof wl-copy-process))
 
-(setq org-pomodoro-audio-player "mplayer")
-(setq org-pomodoro-finished-sound-args "-volume 0.3")
-(setq org-pomodoro-long-break-sound-args "-volume 0.3")
-(setq org-pomodoro-short-break-sound-args "-volume 0.3")
+(defun wl-paste ()
+  (if (and wl-copy-process (process-live-p wl-copy-process))
+      nil ; should return nil if we're the current paste owner
+    (shell-command-to-string "wl-paste -n")))
+(setq interprogram-cut-function 'wl-copy)
+(setq interprogram-paste-function 'wl-paste)
 
 (use-package lsp-pyright
   :ensure t
   :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
+                         (require 'lsp-pyright)
+                         (lsp))))  ; or lsp-deferred
 
 (after! rustic
   (set-popup-rule! "^\\*cargo" :size 0.5))
@@ -228,6 +127,7 @@
 (setq leetcode-directory "~/leetcode")
 (add-hook 'leetcode-solution-mode-hook
           (lambda() (flycheck-mode -1)))
+
 (after! go-mode
   (setq gofmt-command "goimports")
   (add-hook 'go-mode-hook
@@ -246,3 +146,7 @@
   :hook (org-mode . global-org-modern-mode)
   :config
   (setq org-modern-label-border 0.3))
+
+(setq bookmark-default-file "~/Nextcloud/bookmarks")
+
+(load! "+bindings.el")
