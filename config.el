@@ -31,7 +31,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Nextcloud/org/")
+(setq org-directory "~/OneDrive/org/")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -62,7 +62,7 @@
   (setq lsp-rust-full-docs t))
 
 (setq org-journal-encrypt-journal t)
-(setq org-journal-dir "~/Nextcloud/org")
+(setq org-journal-dir "~/OneDrive/org")
 
 (setq +latex-viewers '(zathura))
 (setq latex-preview-pane-use-frame t)
@@ -83,8 +83,8 @@
 
 (use-package! protobuf-mode)
 
-(setq-default org-download-image-dir "~/Nextcloud/org/images")
-(setq-default org-roam-directory "~/Nextcloud/org")
+(setq-default org-download-image-dir "~/OneDrive/org/images")
+(setq-default org-roam-directory "~/OneDrive/org")
 
 (setq-hook! 'vue-mode-hook +format-with-lsp nil)
 
@@ -117,7 +117,7 @@
   (set-popup-rule! "^\\*cargo" :size 0.5))
 (setq rustic-cargo-test-disable-warnings t)
 
-(setq! citar-bibliography '("~/Nextcloud/references.bib"))
+(setq! citar-bibliography '("~/OneDrive/references.bib"))
 
 
 (setq org-image-actual-width (list 550))
@@ -147,7 +147,7 @@
   :config
   (setq org-modern-label-border 0.3))
 
-(setq bookmark-default-file "~/Nextcloud/bookmarks")
+(setq bookmark-default-file "~/OneDrive/bookmarks")
 
 (load! "+bindings.el")
 
