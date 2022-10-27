@@ -141,6 +141,7 @@
          :map copilot-completion-map
          ("<tab>" . 'copilot-accept-completion)
          ("TAB" . 'copilot-accept-completion)))
+(setq copilot-enable-predicates nil)
 
 (use-package! org-modern
   :hook (org-mode . global-org-modern-mode)
