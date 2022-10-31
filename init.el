@@ -14,6 +14,7 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+
 (doom! :input
        chinese
        ;;japanese
@@ -182,3 +183,6 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+(after! doom-cli-env
+  (add-to-list 'doom-env-allow "^SSH_"))
