@@ -117,7 +117,7 @@
   (set-popup-rule! "^\\*cargo" :size 0.5))
 (setq rustic-cargo-test-disable-warnings t)
 
-(setq! citar-bibliography '("~/OneDrive/references.bib"))
+(setq! citar-bibliography '("~/OneDrive/bib/bib.bib"))
 
 
 (setq org-image-actual-width (list 550))
