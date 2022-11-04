@@ -109,7 +109,7 @@
        ;;tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
        tree-sitter       ; syntax and parsing, sitting in a tree...
-       leetcode
+       ;;leetcode
        copilot
 
        :lang

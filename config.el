@@ -30,7 +30,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/OneDrive/org/")
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -49,6 +49,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+<<<<<<< HEAD
 ;; rust
 (after! rustic
   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
@@ -101,5 +102,12 @@
   (setq org-modern-label-border 0.3))
 
 (setq bookmark-default-file "~/OneDrive/bookmarks")
+=======
+>>>>>>> 7a9708e (put configs into separate files)
 
+(load! "+org.el")
 (load! "+bindings.el")
+(load! "+python.el")
+(load! "+rust.el")
+(load! "+latex.el")
+
