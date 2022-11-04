@@ -170,7 +170,6 @@
        web               ; the tubes
        (yaml +lsp)              ; JSON, but readable
        protobuf
-       perl
        vue
 
        :email
