@@ -8,7 +8,6 @@
 ;; clients, file templates and snippets.
 (setq user-full-name "Bernhard Specht"
       user-mail-address "bernhard@specht.net"
-
       display-line-numbers-type nil)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
@@ -55,9 +54,6 @@
   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
   (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
   (setq lsp-rust-analyzer-proc-macro-enable t)
-                                        ;  (setq lsp-rust-analyzer-display-chaining-hints t)
-                                        ;  (setq lsp-rust-analyzer-display-parameter-hints t)
-                                        ;  (setq lsp-rust-analyzer-server-display-inlay-hints t)
   (setq lsp-rust-all-features t)
   (setq lsp-rust-full-docs t))
 
