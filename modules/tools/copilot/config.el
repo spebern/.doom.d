@@ -7,5 +7,5 @@
          :map copilot-completion-map
          ("<tab>" . 'copilot-accept-completion)
          ("TAB" . 'copilot-accept-completion))
-  :init
+  :config
   (setq copilot-enable-predicates nil))
