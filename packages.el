@@ -55,8 +55,6 @@
 (package! k8s-mode)
 (package! gitlab-ci-mode)
 (package! gitlab-ci-mode-flycheck)
-(package! vue-mode)
-(package! vue-html-mode)
 (package! org-download)
 (package! ox-jira)
 (package! ob-http)
