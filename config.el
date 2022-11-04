@@ -67,9 +67,6 @@
 (setq +latex-viewers '(zathura))
 (setq latex-preview-pane-use-frame t)
 
-(use-package! cperl-mode
-  :mode ("/\\.pm$" "/\\.pl$" "/\\.t$"))
-
 (eval-after-load "org"
   '(require 'ox-confluence nil t))
 
