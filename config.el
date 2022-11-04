@@ -93,12 +93,6 @@
 
 
 (setq org-image-actual-width (list 550))
-(setq leetcode-prefer-language "python3")
-(setq leetcode-prefer-sql "mysql")
-(setq leetcode-save-solutions t)
-(setq leetcode-directory "~/leetcode")
-(add-hook 'leetcode-solution-mode-hook
-          (lambda() (flycheck-mode -1)))
 
 (after! go-mode
   (setq gofmt-command "goimports")
