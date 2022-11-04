@@ -169,6 +169,7 @@
        web               ; the tubes
        (yaml +lsp)              ; JSON, but readable
        protobuf
+       vue
 
        :email
        mu4e
