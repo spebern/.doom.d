@@ -76,7 +76,6 @@
 
 (setq-hook! 'vue-mode-hook +format-with-lsp nil)
 
-;; org babel http
 (use-package! ob-http)
 
 (use-package lsp-pyright
