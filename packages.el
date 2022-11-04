@@ -57,7 +57,6 @@
 (package! gitlab-ci-mode-flycheck)
 (package! vue-mode)
 (package! vue-html-mode)
-(package! protobuf-mode)
 (package! org-download)
 (package! ox-jira)
 (package! ob-http)

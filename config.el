@@ -81,7 +81,6 @@
 (eval-after-load "org"
   '(require 'ox-confluence nil t))
 
-(use-package! protobuf-mode)
 
 (setq-default org-download-image-dir "~/OneDrive/org/images")
 (setq-default org-roam-directory "~/OneDrive/org")

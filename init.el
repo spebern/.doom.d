@@ -168,6 +168,7 @@
        terra             ; Earth and Moon in alignment for performance.
        web               ; the tubes
        (yaml +lsp)              ; JSON, but readable
+       protobuf
 
        :email
        mu4e
