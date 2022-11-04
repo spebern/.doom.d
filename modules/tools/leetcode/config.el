@@ -7,5 +7,5 @@
         leetcode-prefer-sql "mysql"
         leetcode-save-solutions t
         leetcode-directory "~/leetcode")
-  (set-hook! 'leetcode-solution-mode-hook
+  (setq-hook! 'leetcode-solution-mode-hook
             (lambda() (flycheck-mode -1))))
