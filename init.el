@@ -110,6 +110,7 @@
        upload            ; map local to remote projects via ssh/ftp
        tree-sitter       ; syntax and parsing, sitting in a tree...
        leetcode
+       copilot
 
        :lang
        ;;agda              ; types of types of types of types...
