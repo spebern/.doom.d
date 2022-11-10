@@ -49,62 +49,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-<<<<<<< HEAD
-;; rust
-(after! rustic
-  (setq lsp-rust-analyzer-cargo-watch-command "clippy")
-  (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
-  (setq lsp-rust-analyzer-proc-macro-enable t)
-  (setq lsp-rust-all-features t)
-  (setq lsp-rust-full-docs t))
-
-(setq org-journal-encrypt-journal t)
-(setq org-journal-dir "~/OneDrive/org")
-
-(setq +latex-viewers '(zathura))
-(setq latex-preview-pane-use-frame t)
-
-(eval-after-load "org"
-  '(require 'ox-confluence nil t))
-
-
-(setq-default org-download-image-dir "~/OneDrive/org/images")
-(setq-default org-roam-directory "~/OneDrive/org")
-
-(setq-hook! 'vue-mode-hook +format-with-lsp nil)
-
-(use-package! ob-http)
-
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))  ; or lsp-deferred
-
-(after! rustic
-  (set-popup-rule! "^\\*cargo" :size 0.5))
-(setq rustic-cargo-test-disable-warnings t)
-
-(setq! citar-bibliography '("~/OneDrive/bib/bib.bib"))
-
-
-(setq org-image-actual-width (list 550))
-
-(after! go-mode
-  (setq gofmt-command "goimports")
-  (add-hook 'go-mode-hook
-            (lambda ()
-              (add-hook 'after-save-hook 'gofmt nil 'make-it-local))))
-
-(use-package! org-modern
-  :hook (org-mode . global-org-modern-mode)
-  :config
-  (setq org-modern-label-border 0.3))
-
-(setq bookmark-default-file "~/OneDrive/bookmarks")
-=======
->>>>>>> 7a9708e (put configs into separate files)
-
 (load! "+org.el")
 (load! "+bindings.el")
 (load! "+python.el")
