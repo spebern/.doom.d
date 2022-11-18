@@ -54,4 +54,4 @@
 (load! "+python.el")
 (load! "+rust.el")
 (load! "+latex.el")
-
+(load! "+go.el")
