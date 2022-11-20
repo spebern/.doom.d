@@ -1,19 +1,19 @@
 ;;; +org.el -*- lexical-binding: t; -*-
 
-(setq! citar-bibliography '("~/OneDrive/bib/bib.bib"))
+(setq! citar-bibliography '("~/Nextcloud/bib/bib.bib"))
 
-(setq bookmark-default-file "~/OneDrive/bookmarks")
+(setq bookmark-default-file "~/Nextcloud/bookmarks")
 
 (setq org-journal-encrypt-journal t)
-(setq org-journal-dir "~/OneDrive/org")
+(setq org-journal-dir "~/Nextcloud/org")
 
 (use-package! ob-http)
 
 (setq org-image-actual-width (list 550))
 
-(setq-default org-download-image-dir "~/OneDrive/org/images")
-(setq-default org-roam-directory "~/OneDrive/org")
-(setq org-directory "~/OneDrive/org/")
+(setq-default org-download-image-dir "~/Nextcloud/org/images")
+(setq-default org-roam-directory "~/Nextcloud/org")
+(setq org-directory "~/Nextcloud/org/")
 
 (use-package! org-modern
   :hook (org-mode . global-org-modern-mode)
