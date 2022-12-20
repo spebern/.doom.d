@@ -84,6 +84,7 @@ placed, otherwise they come first.")
         "C-n"      #'corfu-next
         "C-p"      #'corfu-previous
         "M-m"      #'corfu-move-to-minibuffer
+        "<return>" #'corfu-complete
         (:prefix "C-x"
                  "C-k"     #'cape-dict
                  "s"       #'cape-ispell
