@@ -46,7 +46,7 @@ placed, otherwise they come first.")
   (completion-cycle-threshold 1)
   (tab-always-indent 'complete)
   (corfu-max-width 80)
-  (corfu-preselect-first nil)
+  (corfu-preselect-first t)
   :hook
   (doom-first-buffer . global-corfu-mode)
   :config
