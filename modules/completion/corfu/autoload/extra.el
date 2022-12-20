@@ -1,4 +1,4 @@
-;;; completion/corfu/autoload/extra.el -*- lexical-binding: t; -*-
+;;; completion/corfu/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
 (defun +corfu-complete-file-at-point ()
