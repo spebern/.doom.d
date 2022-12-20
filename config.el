@@ -55,3 +55,4 @@
 (load! "+rust.el")
 (load! "+latex.el")
 (load! "+go.el")
+(load! "+solidity.el")
