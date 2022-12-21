@@ -37,16 +37,17 @@ placed, otherwise they come first.")
   :custom
   (corfu-separator ?\s)
   (corfu-auto t)
-  (corfu-auto-delay 0.1)
+  (corfu-auto-delay 0.05)
   (corfu-preview-current nil) ;; Disable current candidate preview
   (corfu-on-exact-match nil)
   (corfu-quit-no-match 'separator)
   (corfu-cycle t)
-  (corfu-auto-prefix 2)
+  (corfu-auto-prefix 1)
   (completion-cycle-threshold 1)
   (tab-always-indent 'complete)
   (corfu-max-width 80)
   (corfu-preselect-first t)
+  (cape-dict-file (or (getenv "WORDLIST") "/usr/share/dict/words"))
   :hook
   (doom-first-buffer . global-corfu-mode)
   :config
