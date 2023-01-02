@@ -56,3 +56,5 @@
 (load! "+latex.el")
 (load! "+go.el")
 (load! "+solidity.el")
+
+(load! "helpers.el")
