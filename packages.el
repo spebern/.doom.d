@@ -60,3 +60,4 @@
 (package! ob-http)
 (package! lsp-pyright)
 (package! org-modern)
+(package! uuid)
