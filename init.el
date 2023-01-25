@@ -190,3 +190,6 @@
 
 (after! doom-cli-env
   (add-to-list 'doom-env-allow "^SSH_"))
+
+(setenv "LSP_USE_PLISTS" "1")
+(setq lsp-use-plist t)

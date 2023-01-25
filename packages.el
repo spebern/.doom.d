@@ -61,3 +61,5 @@
 (package! lsp-pyright)
 (package! org-modern)
 (package! uuid)
+
+(unpin! lsp-mode)
