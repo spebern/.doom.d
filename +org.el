@@ -1,6 +1,6 @@
 ;;; +org.el -*- lexical-binding: t; -*-
 
-(setq! citar-bibliography '("~/Nextcloud/bib/bib.bib"))
+(setq! citar-bibliography '("~/Nextcloud/references.bib"))
 
 (setq bookmark-default-file "~/Nextcloud/bookmarks")
 
@@ -45,4 +45,5 @@
 (after! org
   (add-to-list 'org-capture-templates
                '("s" "Slipbox" entry  (file "braindump/org/inbox.org")
-                 "* %?\n")))
+                 "* %?\n"))
+  (add-to-list 'org-cite-global-bibliography "~/Nextcloud/references.bib"))
