@@ -83,7 +83,6 @@
        :checkers
        syntax              ; tasing you for every semicolon you forget
        (spell +aspell +everywhere)             ; tasing you for misspelling mispelling
-       grammar           ; tasing grammar mistake every you make
 
        :tools
        ;;ansible
@@ -111,6 +110,7 @@
        tree-sitter       ; syntax and parsing, sitting in a tree...
        ;;leetcode
        copilot
+       languagetool
        chatgpt
 
        :lang
