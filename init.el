@@ -111,6 +111,7 @@
        tree-sitter       ; syntax and parsing, sitting in a tree...
        ;;leetcode
        copilot
+       chatgpt
 
        :lang
        ;;agda              ; types of types of types of types...

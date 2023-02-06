@@ -2,4 +2,4 @@
 ;;; tools/chatgpt/packages.el
 
 (package! chatgpt
-  :recipe (:host github :repo "joshcho/ChatGPT.el" :files ("*.el" "dist")))
+  :recipe (:host github :repo "joshcho/ChatGPT.el" :files ("dist" "*.el")))
